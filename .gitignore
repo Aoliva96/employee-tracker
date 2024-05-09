@@ -130,7 +130,7 @@ dist
 .pnp.*
 
 # Extras
-package-lock.json
+pnpm-lock.yaml
 .vscode
 .DS_Store
 project-requirements.md
