@@ -10,6 +10,7 @@ const { DB_USER, DB_PASSWORD, DB_NAME } = process.env;
 const db = mysql2.createConnection(
   {
     host: "localhost",
+    port: 3306,
     database: DB_NAME,
     user: DB_USER,
     password: DB_PASSWORD,
@@ -66,9 +67,12 @@ async function init() {
           case "Update an employee role":
             updateEmployeeRole();
             break;
-          default:
+          case "Exit":
             console.log("Closing application");
             process.exit();
+          default:
+            console.log("Invalid selection, please try again");
+            init();
         }
       });
   } catch (error) {

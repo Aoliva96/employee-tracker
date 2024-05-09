@@ -6,19 +6,17 @@ const fs = require("fs");
 dotenv.config();
 const { DB_USER, DB_PASSWORD, DB_NAME } = process.env;
 
-// Connect to db specified in the .env file
+// Create connection to db
 const db = mysql2.createConnection(
   {
     host: "localhost",
+    port: 3306,
     database: DB_NAME,
     user: DB_USER,
     password: DB_PASSWORD,
   },
   console.log(`Attempting to seed data for ${DB_NAME}...`)
 );
-db.connect((err) => {
-  if (err) throw err;
-});
 
 // Read the seed file
 const seedsSql = fs.readFileSync("./db/seeds.sql", "utf8");
