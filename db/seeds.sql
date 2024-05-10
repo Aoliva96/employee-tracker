@@ -1,30 +1,36 @@
 USE employee_db;
 
 INSERT INTO department (name)
-VALUES ('Management'),
-    ('Engineering'),
-    ('Sales'),
-    ('Marketing'),
-    ('Finance');
+VALUES ('management'),
+    ('engineering'),
+    ('design'),
+    ('marketing'),
+    ('sales'),
+    ('finance');
 
 INSERT INTO role (title, salary, department_id)
-VALUES ('Manager', 80000, 1),
-    ('Engineer', 65000, 2),
-    ('Salesperson', 30000, 3),
-    ('Analyst', 45000, 2),
-    ('Designer', 55000, 1),
-    ('Marketer', 50000, 4),
-    ('Accountant', 60000, 5);
+VALUES ('manager', 120000, 1),
+    ('engineer', 95000, 2),
+    ('designer', 85000, 3),
+    ('analyst', 75000, 4),
+    ('marketer', 65000, 4),
+    ('salesperson', 50000, 5),
+    ('accountant', 80000, 6);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ('James', 'Scott', 1, NULL),
-    ('Jane', 'Smith', 2, 1),
-    ('Michael', 'Johnson', 2, 1),
-    ('Emily', 'Davis', 3, 2),
-    ('Christopher', 'Taylor', 3, 2),
-    ('David', 'Wilson', 3, 2),
-    ('Sarah', 'Brown', 1, NULL),
-    ('Jennifer', 'Miller', 2, 1),
-    ('Robert', 'Jones', 2, 1),
-    ('Jessica', 'Anderson', 3, 2);
+VALUES ('David', 'Lynch', 1, NULL),
+    ('Dale', 'Cooper', 1, NULL),
+    ('Laura', 'Palmer', 1, NULL),
+    ('Donna', 'Hayward', 2, 1),
+    ('Leland', 'Palmer', 2, 1),
+    ('Denise', 'Bryson', 3, 1),
+    ('Josie', 'Packard', 3, 1),
+    ('Lucy', 'Moran', 4, 2),
+    ('James', 'Hurley', 4, 2),
+    ('Norma', 'Jennings', 5, 2),
+    ('Leo', 'Johnson', 5, 2),
+    ('Nadine', 'Hurley', 6, 3),
+    ('Robert', 'Jones', 6, 3),
+    ('Benjamin', 'Horne', 7, 3),
+    ('Betty', 'Briggs', 7, 3);
 
