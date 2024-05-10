@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "schema": "node db/db-schema.js",
-    "seed": "node db/db-seed.js",
-    "start": "node server.js"
+    "start": "node script.js"
   },
   "repository": {
     "type": "git",
