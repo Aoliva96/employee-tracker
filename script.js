@@ -18,22 +18,31 @@ const db = mysql2.createConnection(
     user: DB_USER,
     password: DB_PASSWORD,
   },
+
   console.log(
-    chalk.green(`[ Connected to database `) +
-      chalk.blueBright(`${DB_NAME}`) +
-      chalk.green(` ]`)
-  ),
-  console.log(""),
-  console.log(chalk.green("[ Starting Employee Tracker... ]"))
+    chalk.yellow(`[ `) +
+      chalk.yellow(`Establishing connection to ${DB_NAME}...`) +
+      chalk.yellow(` ]`)
+  )
 );
 db.connect((err) => {
-  if (err)
-    throw (
-      err &&
-      console.error(
-        chalk.red(`[ Error connecting to database ${DB_NAME} ]`, err)
-      )
+  if (err) {
+    console.error(
+      chalk.red(`[ Error connecting to database ${DB_NAME} ]`, err)
     );
+    process.exit();
+  } else {
+    console.log(
+      chalk.green(`[ `) +
+        chalk.green(`Connected to database `) +
+        chalk.blueBright(`${DB_NAME}`) +
+        chalk.green(` ]`)
+    );
+    console.log("");
+    console.log(chalk.green("[ Starting Employee Tracker... ]"));
+    // Start application
+    init();
+  }
 });
 
 // Function to start the application
@@ -84,7 +93,7 @@ async function init() {
           break;
         case "[ Exit ]":
           console.log("=============================================");
-          console.log(chalk.green("[ Closing application... ]"));
+          console.log(chalk.yellow("[ Closing application... ]"));
           console.log("");
           console.log(chalk.green("[ Have a nice day ]"));
           process.exit();
@@ -376,6 +385,3 @@ async function updateEmployeeRole() {
   );
   init();
 }
-
-// Start application
-init();
