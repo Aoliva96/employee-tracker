@@ -61,11 +61,11 @@ Assuming you already have mySQL installed, start by setting up the database. Sta
 
 In the future I plan on adding additional features, such as the ability to delete items or modify values in the database. For now, dropping the database and rerunning both schema and seed files will reset the app back to default. If you wish to change any of the default values, simply edit the seeds.sql file in the db folder as desired.
 
-Click the link below for a quick demo of the project's functionality:
+## Deployment
+
+Click the demo link below for a short video of the project's functionality:
 
 [Project Demo Link](https://app.screencastify.com/v3/watch/LUvs9M5mTUb78ecmocIn)
-
-## Deployment
 
 [Link to the GitHub repo for this project](https://github.com/Aoliva96/employee-tracker)
 
